@@ -1,15 +1,42 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
 h2 {
   font-family: "Philosopher", Times, "Times New Roman", serif; }
 
 p {
   color: #2d2d2d;
+  font-family: "Nunito", Arial, sans-serif;
+  margin: 0; }
+
+.hidden {
+  display: none; }
+
+.button {
   font-family: "Nunito", Arial, sans-serif; }
 
+.btn-primary {
+  background-color: #9EC2DF;
+  border: 0;
+  border-radius: 50em;
+  -webkit-box-shadow: 5px 7px 0px 0px #F3CA40;
+  -moz-box-shadow: 5px 7px 0px 0px #F3CA40;
+  box-shadow: 5px 7px 0px 0px #F3CA40;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  outline: 0;
+  padding: 20px 100px; }
+
 .nav-burger {
-  width: 60px;
-  height: 45px;
+  width: 50px;
+  height: 35px;
   position: relative;
-  margin: 50px 0;
+  margin: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -23,9 +50,9 @@ p {
 .nav-burger span {
   display: block;
   position: absolute;
-  height: 9px;
+  height: 6px;
   width: 100%;
-  background: #d3531a;
+  background: #ffffff;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -42,10 +69,10 @@ p {
   top: 0px; }
 
 .nav-burger span:nth-child(2), .nav-burger span:nth-child(3) {
-  top: 18px; }
+  top: 14px; }
 
 .nav-burger span:nth-child(4) {
-  top: 36px; }
+  top: 28px; }
 
 .nav-burger.open span:nth-child(1) {
   top: 18px;
@@ -68,3 +95,37 @@ p {
   top: 18px;
   width: 0%;
   left: 50%; }
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+section.home {
+  align-items: center;
+  background-color: #737fe9;
+  background-image: url("https://via.placeholder.com/1920x1080");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex; }
+  section.home .button {
+    display: block;
+    margin: 0 auto; }
+  section.home .container {
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 auto;
+    padding: 60px 0;
+    width: 80%; }
+  section.home p {
+    margin-bottom: 50px;
+    text-align: center; }
+  @media only screen and (min-width: 769px) and (orientation: landscape) {
+    section.home {
+      height: 100vh; } }
