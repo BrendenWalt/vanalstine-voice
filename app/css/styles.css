@@ -5,7 +5,9 @@ body {
   margin: 0; }
 
 h2 {
+  color: #676767;
   font-family: "Philosopher", Times, "Times New Roman", serif;
+  font-size: 42px;
   margin: 0; }
 
 p {
@@ -25,26 +27,36 @@ img {
   max-width: 1200px; }
 
 .button {
-  font-family: "Nunito", Arial, sans-serif; }
+  border-radius: 50em;
+  cursor: pointer;
+  font-family: "Nunito", Arial, sans-serif;
+  font-weight: 600;
+  outline: 0; }
 
 .btn-primary {
   background-color: #9EC2DF;
   border: 0;
-  border-radius: 50em;
   -webkit-box-shadow: 5px 7px 0px 0px #F3CA40;
   -moz-box-shadow: 5px 7px 0px 0px #F3CA40;
   box-shadow: 5px 7px 0px 0px #F3CA40;
   color: #ffffff;
-  cursor: pointer;
   font-size: 1.5rem;
-  font-weight: 700;
-  outline: 0;
+  padding: 11px 58px; }
+
+.btn-secondary {
+  background-color: #ffffff;
+  border: 3px solid #9EC2DF;
+  color: #676767;
+  -webkit-box-shadow: 5px 5px 0px 0px #9EC2DF;
+  -moz-box-shadow: 5px 5px 0px 0px #9EC2DF;
+  box-shadow: 5px 5px 0px 0px #9EC2DF;
   padding: 11px 58px; }
 
 .nav-burger {
   width: 40px;
   height: 30px;
-  position: relative;
+  position: fixed;
+  top: 35px;
   margin: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -54,7 +66,8 @@ img {
   -moz-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 15; }
 
 .nav-burger span {
   display: block;
@@ -105,14 +118,47 @@ img {
   width: 0%;
   left: 50%; }
 
+.nav-links {
+  background-color: #9EC2DF;
+  position: fixed;
+  top: 0;
+  left: -25%;
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.5s ease; }
+  .nav-links.open {
+    left: 0; }
+  .nav-links ul {
+    padding: 0;
+    margin: 0; }
+  .nav-links li {
+    color: #ffffff;
+    list-style: none;
+    margin: 35px 0;
+    text-align: center; }
+  .nav-links a {
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 25px;
+    line-height: 28px;
+    text-decoration: none;
+    transition: color 0.2s ease; }
+    .nav-links a:hover {
+      color: #F3CA40; }
+
 .vv-divider {
   display: inline-block;
   font-size: 0;
-  margin: 20px 0; }
+  margin: 5px 0 20px; }
   .vv-divider div {
     background-color: #F3CA40;
     display: inline-block;
-    height: 12px;
+    height: 5px;
     width: 12px;
     margin: 0 4px; }
     .vv-divider div:nth-child(3) {
@@ -127,7 +173,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 5%;
+  padding: 30px 5% 10px;
   position: absolute;
   top: 0;
   left: 0;
@@ -163,10 +209,12 @@ section.home {
   section.home .container {
     background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 60px 25px;
+    max-width: 800px;
     width: 80%; }
   section.home p {
-    margin-bottom: 50px;
+    font-size: 1.75em;
+    margin-bottom: 30px;
     text-align: center; }
   @media only screen and (min-width: 750px) and (orientation: landscape) {
     section.home {
@@ -176,8 +224,14 @@ section.voice-lessons {
   padding: 45px 0; }
   section.voice-lessons h2 {
     text-align: center; }
+  section.voice-lessons .btn-secondary {
+    margin-top: 35px; }
   section.voice-lessons .container {
     text-align: center; }
+    section.voice-lessons .container p {
+      margin: 0 auto;
+      max-width: 800px;
+      width: 50%; }
   section.voice-lessons .lessons-section {
     align-items: center;
     background-image: url("../images/category-list-bg.jpg");
@@ -225,8 +279,13 @@ section.philosophy {
   section.philosophy .text-container {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 45px; }
+    section.philosophy .text-container p {
+      margin: 0 auto;
+      max-width: 1000px;
+      text-align: center; }
 
 section.about-me {
+  background-color: #f5f5f5;
   border-bottom: 10px solid #9EC2DF;
   padding: 40px 0; }
   section.about-me .container {
@@ -236,7 +295,12 @@ section.about-me {
     grid-column-gap: 50px; }
   section.about-me .headshot {
     grid-column-end: -1; }
+    section.about-me .headshot img {
+      -webkit-box-shadow: 3px 5px 0px 0px #F3CA40;
+      -moz-box-shadow: 3px 5px 0px 0px #F3CA40;
+      box-shadow: 3px 5px 0px 0px #F3CA40; }
   section.about-me .about-container {
+    background-color: #ffffff;
     border-top: 10px solid #9EC2DF;
     padding: 25px;
     grid-column: 1/2;
@@ -244,7 +308,7 @@ section.about-me {
 
 .social-feed {
   text-align: center;
-  padding-top: 45px; }
+  padding-top: 30px; }
   .social-feed .instagram-feed {
     font-size: 0;
     display: grid;
@@ -272,7 +336,10 @@ section.contact {
     display: inline-block; }
   section.contact .contact-info {
     width: 30%; }
+    section.contact .contact-info i {
+      color: #676767; }
   section.contact .contact-form {
+    float: right;
     width: 65%; }
 
 #to-top {
@@ -281,7 +348,7 @@ section.contact {
   background-color: #9EC2DF;
   border-radius: 8px;
   padding: 13px 8px;
-  bottom: 38px; }
+  bottom: 28px; }
   #to-top i {
     color: #ffffff;
     font-size: 25px; }
