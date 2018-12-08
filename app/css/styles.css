@@ -5,7 +5,8 @@ body {
   margin: 0; }
 
 h2 {
-  font-family: "Philosopher", Times, "Times New Roman", serif; }
+  font-family: "Philosopher", Times, "Times New Roman", serif;
+  margin: 0; }
 
 p {
   color: #676767;
@@ -21,7 +22,7 @@ img {
 .container {
   margin: 0 auto;
   width: 80%;
-  max-width: 1100px; }
+  max-width: 1200px; }
 
 .button {
   font-family: "Nunito", Arial, sans-serif; }
@@ -58,7 +59,7 @@ img {
 .nav-burger span {
   display: block;
   position: absolute;
-  height: 6px;
+  height: 5px;
   width: 100%;
   background: #ffffff;
   border-radius: 9px;
@@ -106,7 +107,8 @@ img {
 
 .vv-divider {
   display: inline-block;
-  font-size: 0; }
+  font-size: 0;
+  margin: 20px 0; }
   .vv-divider div {
     background-color: #F3CA40;
     display: inline-block;
@@ -130,6 +132,11 @@ header {
   top: 0;
   left: 0;
   width: 100%; }
+  header .nav-container,
+  header .social {
+    width: 100px; }
+  header .social {
+    text-align: right; }
 
 .social i {
   cursor: pointer;
@@ -142,8 +149,9 @@ header {
 
 section.home {
   align-items: center;
+  background-attachment: fixed;
   background-color: #737fe9;
-  background-image: url("https://via.placeholder.com/1920x1080");
+  background-image: url("../images/main-bg.jpg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -153,9 +161,8 @@ section.home {
     display: block;
     margin: 0 auto; }
   section.home .container {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
-    max-width: 800px;
     padding: 60px 0;
     width: 80%; }
   section.home p {
@@ -165,22 +172,124 @@ section.home {
     section.home {
       height: 90vh; } }
 
-.social-feed .instagram-feed {
-  font-size: 0;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); }
-  .social-feed .instagram-feed div {
-    object-fit: cover; }
-  .social-feed .instagram-feed img {
-    height: 100%;
-    width: 100%; }
+section.voice-lessons {
+  padding: 45px 0; }
+  section.voice-lessons h2 {
+    text-align: center; }
+  section.voice-lessons .container {
+    text-align: center; }
+  section.voice-lessons .lessons-section {
+    align-items: center;
+    background-image: url("../images/category-list-bg.jpg");
+    background-position: 50% 85%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 32vh;
+    margin: 45px 0; }
+    section.voice-lessons .lessons-section .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+    section.voice-lessons .lessons-section .lesson {
+      background-color: #ffffff;
+      border: 2px solid #F3CA40;
+      -webkit-box-shadow: 3px 5px 0px 0px #F3CA40;
+      -moz-box-shadow: 3px 5px 0px 0px #F3CA40;
+      box-shadow: 3px 5px 0px 0px #F3CA40;
+      color: #676767;
+      display: table;
+      font-family: "Nunito", Arial, sans-serif;
+      font-weight: 800;
+      height: 58px;
+      margin: 18px 15px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 30%; }
+      section.voice-lessons .lessons-section .lesson span {
+        display: table-cell;
+        vertical-align: middle; }
+
+section.philosophy {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("../images/philosophy-bg.jpg");
+  display: flex;
+  height: 55vh; }
+  section.philosophy h2 {
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 0; }
+  section.philosophy .text-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 45px; }
+
+section.about-me {
+  border-bottom: 10px solid #9EC2DF;
+  padding: 40px 0; }
+  section.about-me .container {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 1.25fr 1fr;
+    grid-column-gap: 50px; }
+  section.about-me .headshot {
+    grid-column-end: -1; }
+  section.about-me .about-container {
+    border-top: 10px solid #9EC2DF;
+    padding: 25px;
+    grid-column: 1/2;
+    grid-row-start: 1; }
+
+.social-feed {
+  text-align: center;
+  padding-top: 45px; }
+  .social-feed .instagram-feed {
+    font-size: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); }
+    .social-feed .instagram-feed div {
+      object-fit: cover; }
+    .social-feed .instagram-feed img {
+      height: 100%;
+      width: 100%; }
 
 section.contact {
-  background-color: #9EC2DF; }
+  background-color: #9EC2DF;
+  background: -moz-linear-gradient(-45deg, #9EC2DF 0%, #F3CA40 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #9EC2DF 0%, #F3CA40 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(165deg, #9EC2DF 0%, #F3CA40 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  padding: 45px 0; }
+  section.contact .container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 45px; }
+  section.contact .contact-info,
+  section.contact .contact-form {
+    display: inline-block; }
+  section.contact .contact-info {
+    width: 30%; }
+  section.contact .contact-form {
+    width: 65%; }
+
+#to-top {
+  position: absolute;
+  right: 3%;
+  background-color: #9EC2DF;
+  border-radius: 8px;
+  padding: 13px 8px;
+  bottom: 38px; }
+  #to-top i {
+    color: #ffffff;
+    font-size: 25px; }
 
 footer {
   background-color: #5a5a5a;
-  padding: 25px 0 10px; }
+  padding: 25px 0 10px;
+  position: relative; }
   footer .container {
     display: flex;
     flex-direction: row;

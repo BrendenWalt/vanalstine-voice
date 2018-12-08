@@ -8,6 +8,7 @@ body {
 }
 h2 {
   font-family: $header;
+  margin: 0;
 }
 p {
   color: $color-text;
@@ -25,7 +26,7 @@ img {
 .container {
   margin: 0 auto;
   width: 80%;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 
 // Buttons
@@ -69,7 +70,7 @@ img {
 .nav-burger span {
   display: block;
   position: absolute;
-  height: 6px;
+  height: 5px;
   width: 100%;
   background: #ffffff;
   border-radius: 9px;
@@ -127,6 +128,7 @@ img {
 .vv-divider {
   display: inline-block;
   font-size: 0;
+  margin: 20px 0;
   div {
     background-color: $color-secondary;
     display: inline-block;
@@ -157,6 +159,13 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  .nav-container,
+  .social {
+    width: 100px;
+  }
+  .social {
+    text-align: right;
+  }
 }
 
 // Social 
@@ -174,8 +183,9 @@ header {
 // Home page styles
 section.home {
   align-items: center;
+  background-attachment: fixed;
   background-color: #737fe9;
-  background-image: url('https://via.placeholder.com/1920x1080');
+  background-image: url('../images/main-bg.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -186,9 +196,8 @@ section.home {
     margin: 0 auto;
   }
   .container {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: $whitebg;
     margin: 0 auto;
-    max-width: 800px;
     padding: 60px 0;
     width: 80%; 
   }
@@ -199,10 +208,104 @@ section.home {
   @media only screen and (min-width: $bp-med) and (orientation: landscape) {
     height: 90vh;
   }
-} 
+}
+
+// VOICE LESSONS
+section.voice-lessons {
+  padding: 45px 0;
+  h2 {
+    text-align: center;
+  }
+  .container {
+    text-align: center;
+  }
+  .lessons-section {
+    align-items: center;
+    background-image: url('../images/category-list-bg.jpg');
+    background-position: 50% 85%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 32vh;
+    margin: 45px 0;
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .lesson {
+      background-color: #ffffff;
+      border: 2px solid $color-secondary;
+      -webkit-box-shadow: 3px 5px 0px 0px $color-secondary;
+      -moz-box-shadow: 3px 5px 0px 0px $color-secondary;
+      box-shadow: 3px 5px 0px 0px $color-secondary;
+      color: $color-text;
+      display: table;
+      font-family: $standard;
+      font-weight: 800;
+      height: 58px;
+      margin: 18px 15px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 30%;
+      span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// PHILOSOPHY
+section.philosophy {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('../images/philosophy-bg.jpg');
+  display: flex;
+  // align-items: center;
+  height: 55vh;
+  h2 {
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 0;
+  }
+  .text-container {
+    background-color: $whitebg;
+    padding: 45px;
+  }
+}
+
+// About
+section.about-me {
+  border-bottom: 10px solid $color-primary;
+  padding: 40px 0;
+  .container {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 1.25fr 1fr;
+    grid-column-gap: 50px;
+  }
+  .headshot {
+    grid-column-end: -1;
+  }
+  .about-container {
+    border-top: 10px solid $color-primary;
+    padding: 25px;
+    grid-column: 1/2;
+    grid-row-start: 1;
+  }
+}
 
 // Social
 .social-feed {
+  text-align: center;
+  padding-top: 45px;
+  h2 {
+    
+  }
   .instagram-feed {
     font-size: 0;
     display: grid;
@@ -221,13 +324,46 @@ section.home {
 // CONTACT
 section.contact {
   background-color: $color-primary;
+  background: -moz-linear-gradient(-45deg, $color-primary 0%, $color-secondary 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, $color-primary 0%,$color-secondary 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(165deg, $color-primary 0%,$color-secondary 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  padding: 45px 0;
+  .container {
+    background: $whitebg;
+    padding: 45px;
+  }
+  .contact-info,
+  .contact-form {
+    display: inline-block;
+  }
+  .contact-info {
+    width: 30%;
+  }
+  .contact-form {
+    float: right;
+    width: 65%
+  }
+}
 
+// To Top
+#to-top {
+  position: absolute;
+  right: 3%;
+  background-color: $color-primary;
+  border-radius: 8px;
+  padding: 13px 8px;
+  bottom: 38px;
+  i {
+    color: #ffffff;
+    font-size: 25px;
+  }
 }
 
 // FOOTER
 footer {
   background-color: #5a5a5a;
   padding: 25px 0 10px;
+  position: relative;
   .container {
     display: flex;
     flex-direction: row;
