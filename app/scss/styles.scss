@@ -1,11 +1,4 @@
-// Breakpoint
-$bp-med: 769px;
-// Font variables
-$header: 'Philosopher', Times, 'Times New Roman', serif;
-$standard: 'Nunito', Arial, sans-serif;
-// Colora
-$color-primary: #9EC2DF;
-$color-secondary: #F3CA40;
+@import 'partials/variables';
 
 * {
   box-sizing: border-box;
@@ -17,13 +10,22 @@ h2 {
   font-family: $header;
 }
 p {
-  color: #2d2d2d;
+  color: $color-text;
   font-family: $standard;
   margin: 0;
 }
-
+img {
+  max-width: 100%;
+}
 .hidden {
   display: none;
+}
+
+// Globals
+.container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1100px;
 }
 
 // Buttons
@@ -42,15 +44,15 @@ p {
   font-size: 1.5rem;
   font-weight: 700;
   outline: 0;
-  padding: 20px 100px;
+  padding: 11px 58px;
 }
 
 
 // Nav Styles
 // =====================
 .nav-burger{
-  width: 50px;
-  height: 35px;
+  width: 40px;
+  height: 30px;
   position: relative;
   margin: 0;
   -webkit-transform: rotate(0deg);
@@ -88,11 +90,11 @@ p {
 }
 
 .nav-burger span:nth-child(2),.nav-burger span:nth-child(3) {
-  top: 14px;
+  top: 12px;
 }
 
 .nav-burger span:nth-child(4) {
-  top: 28px;
+  top: 24px;
 }
 
 .nav-burger.open span:nth-child(1) {
@@ -121,6 +123,29 @@ p {
   left: 50%;
 }
 
+// Divider Styles
+.vv-divider {
+  display: inline-block;
+  font-size: 0;
+  div {
+    background-color: $color-secondary;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    &:nth-child(3) {
+      width: 100px;
+    }
+    &:first-child {
+      margin-left:0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+}
+
 // HEADER
 header {
   align-items: center;
@@ -134,6 +159,18 @@ header {
   width: 100%;
 }
 
+// Social 
+.social i {
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 28px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $color-primary;
+  } 
+}
+
 // Home page styles
 section.home {
   align-items: center;
@@ -143,6 +180,7 @@ section.home {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  height: 80vh;
   .button {
     display: block;
     margin: 0 auto;
@@ -150,6 +188,7 @@ section.home {
   .container {
     background-color: rgba(255, 255, 255, 0.4);
     margin: 0 auto;
+    max-width: 800px;
     padding: 60px 0;
     width: 80%; 
   }
@@ -158,6 +197,59 @@ section.home {
     text-align: center;
   }
   @media only screen and (min-width: $bp-med) and (orientation: landscape) {
-    height: 100vh;
+    height: 90vh;
   }
 } 
+
+// Social
+.social-feed {
+  .instagram-feed {
+    font-size: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    div {
+      object-fit: cover;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+
+// CONTACT
+section.contact {
+  background-color: $color-primary;
+
+}
+
+// FOOTER
+footer {
+  background-color: #5a5a5a;
+  padding: 25px 0 10px;
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 85%;
+  }
+  .footer-info {
+    font-family: $standard;
+    font-size: 10px;
+    font-weight: 300;
+    color: #ffffff;
+  }
+  i {
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  
+}
