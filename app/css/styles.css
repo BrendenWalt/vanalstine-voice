@@ -135,7 +135,8 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: left 0.5s ease; }
+  transition: left 0.5s ease;
+  z-index: 4; }
   .nav-links.open {
     left: 0; }
   .nav-links ul {
@@ -226,8 +227,12 @@ section.home {
     width: 92%; }
   section.home p {
     font-size: 1.75em;
+    line-height: 1.25em;
     margin-bottom: 30px;
     text-align: center; }
+  @media only screen and (min-width: 750px) {
+    section.home p {
+      line-height: 1.5em; } }
   @media only screen and (min-width: 750px) and (orientation: landscape) {
     section.home {
       height: 90vh; }
@@ -296,7 +301,7 @@ section.philosophy {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 20% 50%;
   background-image: url("../images/philosophy-bg.jpg");
   display: flex;
   padding-bottom: 35px; }
@@ -313,8 +318,9 @@ section.philosophy {
       text-align: center; }
   @media only screen and (min-width: 750px) {
     section.philosophy {
+      background-position: 50% 50%;
       min-height: 55vh;
-      padding-bottom: 0; }
+      padding-bottom: 60px; }
       section.philosophy .text-container {
         padding: 45px; } }
 
@@ -388,19 +394,28 @@ section.contact {
     section.contact .contact-form {
       float: right;
       width: 65%; }
+    section.contact .contact-info,
+    section.contact .contact-form {
+      display: inline-block; }
     section.contact .conatiner {
       padding: 45px; } }
 
 #to-top {
-  position: absolute;
+  position: fixed;
   right: 3%;
   background-color: #9EC2DF;
   border-radius: 8px;
   padding: 13px 8px;
-  bottom: 28px; }
+  bottom: 78px;
+  -webkit-box-shadow: 2px 3px 0px 0px #F3CA40;
+  -moz-box-shadow: 2px 3px 0px 0px #F3CA40;
+  box-shadow: 2px 3px 0px 0px #F3CA40; }
   #to-top i {
     color: #ffffff;
     font-size: 25px; }
+  @media only screen and (min-width: 750px) {
+    #to-top {
+      bottom: 28px; } }
 
 footer {
   background-color: #5a5a5a;
@@ -408,7 +423,7 @@ footer {
   position: relative; }
   footer .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     align-items: center;
     margin: 0 auto;
     justify-content: space-between;
@@ -417,11 +432,19 @@ footer {
     font-family: "Nunito", Arial, sans-serif;
     font-size: 10px;
     font-weight: 300;
+    padding-bottom: 15px;
     color: #ffffff; }
   footer i {
     cursor: pointer;
-    font-size: 16px;
+    font-size: 22px;
     margin: 0 8px;
     transition: color 0.3s ease; }
     footer i:hover {
       color: #9EC2DF; }
+  @media only screen and (min-width: 750px) {
+    footer .container {
+      flex-direction: row; }
+    footer .footer-info {
+      padding-bottom: 0; }
+    footer i {
+      font-size: 16px; } }
