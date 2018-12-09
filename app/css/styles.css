@@ -13,6 +13,8 @@ h2 {
 p {
   color: #676767;
   font-family: "Nunito", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 27px;
   margin: 0; }
 
 img {
@@ -23,13 +25,17 @@ img {
 
 .container {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   max-width: 1200px; }
+  @media only screen and (min-width: 750px) {
+    .container .container {
+      width: 80%; } }
 
 .button {
   border-radius: 50em;
   cursor: pointer;
   font-family: "Nunito", Arial, sans-serif;
+  font-size: 20px;
   font-weight: 600;
   outline: 0; }
 
@@ -122,8 +128,8 @@ img {
   background-color: #9EC2DF;
   position: fixed;
   top: 0;
-  left: -25%;
-  width: 25%;
+  left: -100%;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -150,6 +156,10 @@ img {
     transition: color 0.2s ease; }
     .nav-links a:hover {
       color: #F3CA40; }
+  @media only screen and (min-width: 750px) {
+    .nav-links {
+      left: -25%;
+      width: 25%; } }
 
 .vv-divider {
   display: inline-block;
@@ -173,7 +183,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 30px 5% 10px;
+  padding: 15px 3% 10px;
   position: absolute;
   top: 0;
   left: 0;
@@ -183,6 +193,9 @@ header {
     width: 100px; }
   header .social {
     text-align: right; }
+  @media only screen and (min-width: 750px) {
+    header {
+      padding: 30px 5% 10px; } }
 
 .social i {
   cursor: pointer;
@@ -201,24 +214,27 @@ section.home {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  height: 80vh; }
+  display: flex; }
   section.home .button {
     display: block;
     margin: 0 auto; }
   section.home .container {
     background-color: rgba(255, 255, 255, 0.8);
-    margin: 0 auto;
-    padding: 60px 25px;
+    margin: 125px auto 45px;
+    padding: 45px 20px;
     max-width: 800px;
-    width: 80%; }
+    width: 92%; }
   section.home p {
     font-size: 1.75em;
     margin-bottom: 30px;
     text-align: center; }
   @media only screen and (min-width: 750px) and (orientation: landscape) {
     section.home {
-      height: 90vh; } }
+      height: 90vh; }
+      section.home .container {
+        margin: 0 auto;
+        padding: 60px 25px;
+        width: 80%; } }
 
 section.voice-lessons {
   padding: 45px 0; }
@@ -231,7 +247,7 @@ section.voice-lessons {
     section.voice-lessons .container p {
       margin: 0 auto;
       max-width: 800px;
-      width: 50%; }
+      width: 90%; }
   section.voice-lessons .lessons-section {
     align-items: center;
     background-image: url("../images/category-list-bg.jpg");
@@ -239,11 +255,13 @@ section.voice-lessons {
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    height: 32vh;
+    height: auto;
+    padding: 25px 0;
     margin: 45px 0; }
     section.voice-lessons .lessons-section .container {
       display: flex;
       justify-content: center;
+      flex-direction: column;
       flex-wrap: wrap; }
     section.voice-lessons .lessons-section .lesson {
       background-color: #ffffff;
@@ -256,13 +274,23 @@ section.voice-lessons {
       font-family: "Nunito", Arial, sans-serif;
       font-weight: 800;
       height: 58px;
-      margin: 18px 15px;
+      margin: 15px auto;
       text-transform: uppercase;
       text-align: center;
-      width: 30%; }
+      width: 90%; }
       section.voice-lessons .lessons-section .lesson span {
         display: table-cell;
         vertical-align: middle; }
+  @media only screen and (min-width: 750px) {
+    section.voice-lessons p {
+      width: 50%; }
+    section.voice-lessons .lessons-section {
+      height: 32vh; }
+      section.voice-lessons .lessons-section .container {
+        flex-direction: row; }
+      section.voice-lessons .lessons-section .lesson {
+        margin: 18px 15px;
+        width: 30%; } }
 
 section.philosophy {
   background-attachment: fixed;
@@ -271,18 +299,24 @@ section.philosophy {
   background-position: 50% 50%;
   background-image: url("../images/philosophy-bg.jpg");
   display: flex;
-  height: 55vh; }
+  padding-bottom: 35px; }
   section.philosophy h2 {
     color: #ffffff;
     text-align: center;
     padding: 25px 0; }
   section.philosophy .text-container {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 45px; }
+    padding: 45px 20px; }
     section.philosophy .text-container p {
       margin: 0 auto;
       max-width: 1000px;
       text-align: center; }
+  @media only screen and (min-width: 750px) {
+    section.philosophy {
+      min-height: 55vh;
+      padding-bottom: 0; }
+      section.philosophy .text-container {
+        padding: 45px; } }
 
 section.about-me {
   background-color: #f5f5f5;
@@ -291,20 +325,29 @@ section.about-me {
   section.about-me .container {
     display: grid;
     grid-auto-flow: dense;
-    grid-template-columns: 1.25fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 50px; }
   section.about-me .headshot {
     grid-column-end: -1; }
     section.about-me .headshot img {
-      -webkit-box-shadow: 3px 5px 0px 0px #F3CA40;
-      -moz-box-shadow: 3px 5px 0px 0px #F3CA40;
-      box-shadow: 3px 5px 0px 0px #F3CA40; }
+      display: block; }
   section.about-me .about-container {
     background-color: #ffffff;
     border-top: 10px solid #9EC2DF;
     padding: 25px;
     grid-column: 1/2;
-    grid-row-start: 1; }
+    grid-row-start: 2; }
+  @media only screen and (min-width: 750px) {
+    section.about-me .container {
+      grid-template-columns: 1.25fr 1fr; }
+    section.about-me .headshot {
+      grid-column-end: -1; }
+      section.about-me .headshot img {
+        -webkit-box-shadow: 3px 5px 0px 0px #F3CA40;
+        -moz-box-shadow: 3px 5px 0px 0px #F3CA40;
+        box-shadow: 3px 5px 0px 0px #F3CA40; }
+    section.about-me .about-container {
+      grid-row-start: 1; } }
 
 .social-feed {
   text-align: center;
@@ -312,12 +355,15 @@ section.about-me {
   .social-feed .instagram-feed {
     font-size: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr); }
+    grid-template-columns: repeat(2, 1fr); }
     .social-feed .instagram-feed div {
       object-fit: cover; }
     .social-feed .instagram-feed img {
       height: 100%;
       width: 100%; }
+  @media only screen and (min-width: 750px) {
+    .social-feed .instagram-feed {
+      grid-template-columns: repeat(6, 1fr); } }
 
 section.contact {
   background-color: #9EC2DF;
@@ -330,17 +376,20 @@ section.contact {
   padding: 45px 0; }
   section.contact .container {
     background: rgba(255, 255, 255, 0.8);
-    padding: 45px; }
+    padding: 45px 3%; }
   section.contact .contact-info,
   section.contact .contact-form {
-    display: inline-block; }
-  section.contact .contact-info {
-    width: 30%; }
-    section.contact .contact-info i {
-      color: #676767; }
-  section.contact .contact-form {
-    float: right;
-    width: 65%; }
+    display: block; }
+  section.contact .contact-info i {
+    color: #676767; }
+  @media only screen and (min-width: 750px) {
+    section.contact .contact-info {
+      width: 30%; }
+    section.contact .contact-form {
+      float: right;
+      width: 65%; }
+    section.contact .conatiner {
+      padding: 45px; } }
 
 #to-top {
   position: absolute;
