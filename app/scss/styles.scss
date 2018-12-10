@@ -185,6 +185,10 @@ img {
     }
   }
   @media only screen and (min-width: $bp-med){
+    left: -55%;
+    width: 55%;
+  }
+  @media only screen and (min-width: $bp-lrg) {
     left: -25%;
     width: 25%;
   }
@@ -225,6 +229,10 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  .logo {
+    max-width: 195px;
+    width: 50%;
+  }
   .nav-container,
   .social {
     width: 100px;
@@ -234,6 +242,10 @@ header {
   }
   @media only screen and (min-width: $bp-med) {
     padding: 30px 5% 10px;
+    .logo {
+      width: 30%;
+
+    }
   }
 }
 
@@ -277,6 +289,7 @@ section.home {
     text-align: center;
   }
   @media only screen and (min-width: $bp-med){
+    min-height: 60vh;
     p {
       line-height: 1.5em;
     }
@@ -305,7 +318,7 @@ section.voice-lessons {
     p {
       margin: 0 auto;
       max-width: 800px;
-      width: 90%;
+      width: 95%;
     }
   }
   .lessons-section {
@@ -346,8 +359,8 @@ section.voice-lessons {
     }
   }
   @media only screen and (min-width: $bp-med) {
-    p {
-      width: 50%;
+    .container p {
+      width: 80%;
     }
     .lessons-section {
       height: 32vh;
@@ -356,8 +369,16 @@ section.voice-lessons {
       }
       .lesson {
         margin: 18px 15px;
-        width: 30%;
+        width: 45%;
       }
+    }
+  }
+  @media only screen and (min-width: $bp-lrg) {
+    .container p {
+      width: 50%;
+    }
+    .lessons-section .lesson {
+      width: 30%;
     }
   }
 }
@@ -378,7 +399,7 @@ section.philosophy {
   }
   .text-container {
     background-color: $whitebg;
-    padding: 45px 20px;
+    padding: 45px 4%;
     p {
       margin: 0 auto;
       max-width: 1000px;
@@ -386,12 +407,14 @@ section.philosophy {
     }
   }
   @media only screen and (min-width: $bp-med) {
-    background-position: 50% 50%;
     min-height: 55vh;
     padding-bottom: 60px;
     .text-container {
       padding: 45px;
     }
+  }
+  @media only screen and (min-width: $bp-lrg) {
+    background-position: 50% 50;
   }
 }
 
@@ -405,7 +428,7 @@ section.about-me {
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 1fr;
-    grid-column-gap: 50px;
+    grid-column-gap: 15px;
   }
   .headshot {
     grid-column-end: -1;
@@ -416,24 +439,31 @@ section.about-me {
   .about-container {
     background-color: #ffffff;
     border-top: 10px solid $color-primary;
-    padding: 25px;
+    padding: 25px 4%;
     grid-column: 1/2;
     grid-row-start: 2;
   }
   @media only screen and (min-width: $bp-med) {
+    .headshot {
+     grid-column-end: -1;
+      
+    }
+    .about-container {
+      padding: 25px;
+    }
+  }
+  @media only screen and (min-width: $bp-lrg) {
     .container {
       grid-template-columns: 1.25fr 1fr;
     }
-    .headshot {
-     grid-column-end: -1;
-     img {
+    .about-container {
+      grid-row-start: 1;
+    }
+    .headshot img {
       -webkit-box-shadow: 3px 5px 0px 0px $color-secondary;
       -moz-box-shadow: 3px 5px 0px 0px $color-secondary;
       box-shadow: 3px 5px 0px 0px $color-secondary;
-    }
-    }
-    .about-container {
-      grid-row-start: 1;
+      
     }
   }
 }
@@ -556,6 +586,7 @@ footer {
   @media only screen and (min-width: $bp-med) {
     .container {
       flex-direction: row;
+      width: 65%;
     }
     .footer-info {
       padding-bottom: 0;
@@ -564,5 +595,9 @@ footer {
       font-size: 16px;
     }
   }
-  
+  @media only screen and (min-width: $bp-lrg) {
+    .container {
+      width: 85%;
+    }
+  }
 }

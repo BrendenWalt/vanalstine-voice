@@ -159,6 +159,10 @@ img {
       color: #F3CA40; }
   @media only screen and (min-width: 750px) {
     .nav-links {
+      left: -55%;
+      width: 55%; } }
+  @media only screen and (min-width: 1000px) {
+    .nav-links {
       left: -25%;
       width: 25%; } }
 
@@ -189,6 +193,9 @@ header {
   top: 0;
   left: 0;
   width: 100%; }
+  header .logo {
+    max-width: 195px;
+    width: 50%; }
   header .nav-container,
   header .social {
     width: 100px; }
@@ -196,7 +203,9 @@ header {
     text-align: right; }
   @media only screen and (min-width: 750px) {
     header {
-      padding: 30px 5% 10px; } }
+      padding: 30px 5% 10px; }
+      header .logo {
+        width: 30%; } }
 
 .social i {
   cursor: pointer;
@@ -231,8 +240,10 @@ section.home {
     margin-bottom: 30px;
     text-align: center; }
   @media only screen and (min-width: 750px) {
-    section.home p {
-      line-height: 1.5em; } }
+    section.home {
+      min-height: 60vh; }
+      section.home p {
+        line-height: 1.5em; } }
   @media only screen and (min-width: 750px) and (orientation: landscape) {
     section.home {
       height: 90vh; }
@@ -252,7 +263,7 @@ section.voice-lessons {
     section.voice-lessons .container p {
       margin: 0 auto;
       max-width: 800px;
-      width: 90%; }
+      width: 95%; }
   section.voice-lessons .lessons-section {
     align-items: center;
     background-image: url("../images/category-list-bg.jpg");
@@ -287,15 +298,20 @@ section.voice-lessons {
         display: table-cell;
         vertical-align: middle; }
   @media only screen and (min-width: 750px) {
-    section.voice-lessons p {
-      width: 50%; }
+    section.voice-lessons .container p {
+      width: 80%; }
     section.voice-lessons .lessons-section {
       height: 32vh; }
       section.voice-lessons .lessons-section .container {
         flex-direction: row; }
       section.voice-lessons .lessons-section .lesson {
         margin: 18px 15px;
-        width: 30%; } }
+        width: 45%; } }
+  @media only screen and (min-width: 1000px) {
+    section.voice-lessons .container p {
+      width: 50%; }
+    section.voice-lessons .lessons-section .lesson {
+      width: 30%; } }
 
 section.philosophy {
   background-attachment: fixed;
@@ -311,18 +327,20 @@ section.philosophy {
     padding: 25px 0; }
   section.philosophy .text-container {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 45px 20px; }
+    padding: 45px 4%; }
     section.philosophy .text-container p {
       margin: 0 auto;
       max-width: 1000px;
       text-align: center; }
   @media only screen and (min-width: 750px) {
     section.philosophy {
-      background-position: 50% 50%;
       min-height: 55vh;
       padding-bottom: 60px; }
       section.philosophy .text-container {
         padding: 45px; } }
+  @media only screen and (min-width: 1000px) {
+    section.philosophy {
+      background-position: 50% 50; } }
 
 section.about-me {
   background-color: #f5f5f5;
@@ -332,7 +350,7 @@ section.about-me {
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 1fr;
-    grid-column-gap: 50px; }
+    grid-column-gap: 15px; }
   section.about-me .headshot {
     grid-column-end: -1; }
     section.about-me .headshot img {
@@ -340,20 +358,23 @@ section.about-me {
   section.about-me .about-container {
     background-color: #ffffff;
     border-top: 10px solid #9EC2DF;
-    padding: 25px;
+    padding: 25px 4%;
     grid-column: 1/2;
     grid-row-start: 2; }
   @media only screen and (min-width: 750px) {
-    section.about-me .container {
-      grid-template-columns: 1.25fr 1fr; }
     section.about-me .headshot {
       grid-column-end: -1; }
-      section.about-me .headshot img {
-        -webkit-box-shadow: 3px 5px 0px 0px #F3CA40;
-        -moz-box-shadow: 3px 5px 0px 0px #F3CA40;
-        box-shadow: 3px 5px 0px 0px #F3CA40; }
     section.about-me .about-container {
-      grid-row-start: 1; } }
+      padding: 25px; } }
+  @media only screen and (min-width: 1000px) {
+    section.about-me .container {
+      grid-template-columns: 1.25fr 1fr; }
+    section.about-me .about-container {
+      grid-row-start: 1; }
+    section.about-me .headshot img {
+      -webkit-box-shadow: 3px 5px 0px 0px #F3CA40;
+      -moz-box-shadow: 3px 5px 0px 0px #F3CA40;
+      box-shadow: 3px 5px 0px 0px #F3CA40; } }
 
 .social-feed {
   text-align: center;
@@ -443,8 +464,12 @@ footer {
       color: #9EC2DF; }
   @media only screen and (min-width: 750px) {
     footer .container {
-      flex-direction: row; }
+      flex-direction: row;
+      width: 65%; }
     footer .footer-info {
       padding-bottom: 0; }
     footer i {
       font-size: 16px; } }
+  @media only screen and (min-width: 1000px) {
+    footer .container {
+      width: 85%; } }
