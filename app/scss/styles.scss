@@ -586,14 +586,16 @@ section.contact {
   right: 3%;
   background-color: $color-primary;
   border-radius: 8px;
-  padding: 13px 8px;
+  
   bottom: 78px;
   -webkit-box-shadow: 2px 3px 0px 0px $color-secondary;
   -moz-box-shadow: 2px 3px 0px 0px $color-secondary;
   box-shadow: 2px 3px 0px 0px $color-secondary;
   i {
     color: #ffffff;
+    display: block;
     font-size: 25px;
+    padding: 13px 8px;
   }
   @media only screen and (min-width: $bp-med) {
     bottom: 28px;

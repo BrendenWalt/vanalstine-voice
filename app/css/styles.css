@@ -463,14 +463,15 @@ section.contact {
   right: 3%;
   background-color: #9EC2DF;
   border-radius: 8px;
-  padding: 13px 8px;
   bottom: 78px;
   -webkit-box-shadow: 2px 3px 0px 0px #F3CA40;
   -moz-box-shadow: 2px 3px 0px 0px #F3CA40;
   box-shadow: 2px 3px 0px 0px #F3CA40; }
   #to-top i {
     color: #ffffff;
-    font-size: 25px; }
+    display: block;
+    font-size: 25px;
+    padding: 13px 8px; }
   @media only screen and (min-width: 750px) {
     #to-top {
       bottom: 28px; } }
