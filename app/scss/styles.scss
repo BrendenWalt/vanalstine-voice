@@ -112,6 +112,7 @@ img {
   transition: .5s ease-in-out;
   cursor: pointer;
   z-index: 15;
+  
 }
 
 .nav-burger span {
@@ -131,10 +132,21 @@ img {
   -moz-transition: .25s ease-in-out;
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
+  &.drop-shadow {
+    -webkit-box-shadow: 2px21px 5px 0px $burger-shadow;
+    -moz-box-shadow: 2px 2px 5px 0px $burger-shadow;
+    box-shadow: 2px 2px 5px 0px $burger-shadow;
+  }
+  
 }
 
 .nav-burger span:nth-child(1) {
   top: 0px;
+}
+.nav-burger span:nth-child(3).drop-shadow {
+  -webkit-box-shadow: 0px 0px 0px 0px $burger-shadow;
+  -moz-box-shadow: 0px 0px 0px 0px $burger-shadow;
+  box-shadow: 0px 0px 0px 0px $burger-shadow;
 }
 
 .nav-burger span:nth-child(2),.nav-burger span:nth-child(3) {
@@ -143,6 +155,12 @@ img {
 
 .nav-burger span:nth-child(4) {
   top: 24px;
+}
+
+.nav-burger.open span {
+  -webkit-box-shadow: 0px 0px 0px 0px $burger-shadow;
+  -moz-box-shadow: 0px 0px 0px 0px $burger-shadow;
+  box-shadow: 0px 0px 0px 0px $burger-shadow;
 }
 
 .nav-burger.open span:nth-child(1) {
@@ -586,7 +604,7 @@ section.contact {
   right: 3%;
   background-color: $color-primary;
   border-radius: 8px;
-  
+  display: none;
   bottom: 78px;
   -webkit-box-shadow: 2px 3px 0px 0px $color-secondary;
   -moz-box-shadow: 2px 3px 0px 0px $color-secondary;
