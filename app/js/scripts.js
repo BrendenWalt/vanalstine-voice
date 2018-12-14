@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log('JS is loaded');
 
     var menuIcon = $('.nav-burger');
     var burgerPatties = $('.nav-burger span');
@@ -7,8 +6,20 @@ $(document).ready(function() {
     var toTop = $('#to-top');
     var menuLink = $('.nav-link a');
     var windowVar = $(window);
+    var documentVar = $(document);
 
-   
+
+                
+    $('section[data-type="background"]').each(function(){
+      var $bgobj = $(this); // assigning the object
+      windowVar.scroll(function(){
+        var yPos = -(windowVar.scrollTop() / $bgobj.data('speed'));
+        var coords = '50% ' + yPos + 'px';
+        $bgobj.css({backgroundPosition: coords });
+      });
+    }); 
+  
+
 
     var onAnchorClick = function(e) {
       var location = this.hash;
@@ -18,16 +29,6 @@ $(document).ready(function() {
         $("html, body").animate({
           scrollTop: $(locationName).offset().top-50
         }, 1000, "swing");
-        
-        
-        // location = $(location);
-        // var target = location[0];
-        // if (target) {
-        //   target.scrollIntoView({
-        //     behavior: "smooth",
-        //     block: "start"
-        //   });
-        // }
          
         history.pushState(null, null,location);
         e.preventDefault();
@@ -35,6 +36,20 @@ $(document).ready(function() {
       }
       menuIcon.toggleClass('open');
       menuList.toggleClass('open');
+    }
+
+    var onEmptyClick = function(e) {
+      e.preventDefault();
+      menuIcon.removeClass('open');
+      menuList.removeClass('open');
+    }
+
+    var onEscapeClick = function(e) {
+      var key = e.key || e.keyCode;
+      console.log("keyup");
+      if(key === "Escape") {
+        
+      }
     }
 
     var onMenuClick = function() {
@@ -65,7 +80,9 @@ $(document).ready(function() {
   menuIcon.on('click', onMenuClick);
   toTop.on('click', onToTopClick);
   menuLink.on('click', onAnchorClick);
+  menuList.on('click', onEmptyClick)
   windowVar.on('scroll', onPageScroll);
+  documentVar.on('keyup', onEscapeClick);
 });
     
 

@@ -213,25 +213,27 @@ img {
   li {
     color: #ffffff;
     list-style: none;
-    margin: 35px 0;
+    // margin: 35px 0;
     text-align: center;
   }
   a {
     cursor: pointer;
     color: #ffffff;
+    display: block;
     font-family: $standard;
     font-size: 25px;
     line-height: 28px;
+    padding: 25px;
     position: relative;
     text-decoration: none;
     transition: color 0.2s ease;
     &:before {
       content: "";
       position: absolute;
-      width: 100%;
+      width: 50%;
       height: 2px;
-      bottom: 0;
-      left: 0;
+      bottom: 15px;
+      left: 25%;
       background-color: #ffffff;
       visibility: hidden;
       -webkit-transform: scaleX(0);
@@ -293,6 +295,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  a[name="home"] {
+    display: none;
+  }
   .logo {
     max-width: 195px;
     width: 50%;
@@ -341,7 +346,7 @@ section.home {
   }
   .container {
     background-color: $whitebg;
-    margin: 125px auto 45px;
+    margin: 260px auto 45px;
     padding: 45px 20px;
     max-width: 800px;
     width: 92%; 
@@ -514,6 +519,9 @@ section.about-me {
     }
     .about-container {
       padding: 25px;
+      h2 {
+        font-size: 78px;
+      }
     }
   }
   @media only screen and (min-width: $bp-lrg) {
@@ -524,9 +532,9 @@ section.about-me {
       grid-row-start: 1;
     }
     .headshot img {
-      -webkit-box-shadow: 3px 5px 0px 0px $color-secondary;
-      -moz-box-shadow: 3px 5px 0px 0px $color-secondary;
-      box-shadow: 3px 5px 0px 0px $color-secondary;
+      -webkit-box-shadow: 11px 11px 0px 0px $color-secondary;
+      -moz-box-shadow: 11px 11px 0px 0px $color-secondary;
+      box-shadow: 11px 11px 0px 0px $color-secondary;
       
     }
   }
